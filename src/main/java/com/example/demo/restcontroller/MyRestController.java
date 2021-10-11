@@ -20,9 +20,19 @@ public class MyRestController {
         return service.getAll();
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/get/id={id}")
     public Optional<Student> getStudentById(@PathVariable Integer id){
         return service.findById(id);
+    }
+
+    @GetMapping("/getnames")
+    public List<String> getStudentNames(){
+        return service.getStudentNames();
+    }
+
+    @GetMapping("/get/name={name}")
+    public Student getStudentById(@PathVariable String name){
+        return service.getByName(name);
     }
 
     @PostMapping("/enroll/{name}")

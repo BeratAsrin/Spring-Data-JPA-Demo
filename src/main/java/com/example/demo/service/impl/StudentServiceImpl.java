@@ -21,6 +21,16 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<String> getStudentNames() {
+        return studentRepository.getNames();
+    }
+
+    @Override
+    public Student getByName(String name) {
+        return studentRepository.getByName(name);
+    }
+
+    @Override
     public void enrollStudent(String name) {
         Student newStudent = new Student();
         newStudent.setName(name);
